@@ -1,3 +1,6 @@
+## What is this for?
+This Discord bot copies a certain user's text in a channel. This is mainly for Roblox Limited Code Sniping, but you can do anything with this if you want.
+
 ### **Installation**
 ---------------------
 
@@ -61,7 +64,10 @@ Example:
 
 ---------------------
 
+## Disclaimer
+This script is provided as-is, and the use of this script to interact with Discord should comply with the Discord Terms of Service and Guidelines. Use it responsibly and avoid violating Discord's rules or any applicable laws.
 
+[Discord TOS](https://discord.com/terms)
 
 
 
