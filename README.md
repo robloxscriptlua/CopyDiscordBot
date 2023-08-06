@@ -27,7 +27,7 @@ Example:
 
 Copy token, not tokens
 
-Open codesniper.py with any editing software other than python (notepad easiest)
+Open codesniper.py with any editing software other than python (notepad easiest) (rightclick codesniper.py and open with) 
 
 Paste it into ```USER_TOKEN``` and it should look similar to this
 
