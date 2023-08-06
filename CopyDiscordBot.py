@@ -8,13 +8,13 @@ import pyperclip
 init()
 
 # Replace 'YOUR_USER_TOKEN' with your actual user token
-USER_TOKEN = ""
+USER_TOKEN = "YOUR_USER_TOKEN"
 
 # Replace 'YOUR_CHANNEL_IDS' with the actual channel IDs where you want to fetch messages
-CHANNEL_IDS = ["", "", ""]
+CHANNEL_IDS = ["YOUR_CHANNEL_IDS", "YOUR_CHANNEL_IDS", "YOUR_CHANNEL_IDS"]
 
 # Replace 'SPECIFIC_USER_ID' with the ID of the user whose messages you want to copy
-SPECIFIC_USER_ID = ""
+SPECIFIC_USER_ID = "SPECIFIC_USER_ID"
 
 searches = 0
 
@@ -35,6 +35,7 @@ async def fetch_messages(channel_id, session, semaphore):
                             content = message.get("content")
                             user_id = message.get("author", {}).get("id")
                             if content and user_id == SPECIFIC_USER_ID:
+                                content = re.sub(r'^\s*#\s+', '', content) # Removes "# " from the text if encountered
                                 pyperclip.copy(content)
                                 print(
                                     f"{Fore.GREEN}Message contents copied to clipboard: {content}"
