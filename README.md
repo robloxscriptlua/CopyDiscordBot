@@ -1,8 +1,15 @@
 ## What is this for?
 This Discord bot copies a certain user's text in a channel. This is mainly for Roblox Limited Code Sniping, but you can do anything with this if you want.
 
+## Note
+If ```Status Code: 401``` occurs, you put your token incorrectly
+
+If you see ```Respond: 200```, it's working
+
 ### **Installation**
 ---------------------
+
+You must have Python 3.6 or later installed
 
 Open CMD
 
