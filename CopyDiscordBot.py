@@ -34,10 +34,7 @@ async def fetch_messages(channel_id, session, semaphore):
                             content = message.get("content")
                             user_id = message.get("author", {}).get("id")
                             if content and user_id == SPECIFIC_USER_ID:
-                                content = re.sub(r'^\s*#\s+', '', content)  # Removes "# " from the text if encountered
-                                quoted_content = re.findall(r'"(.*?)"', content) # Removes quotation marks from the text if encountered
-                                if quoted_content:
-                                    content = quoted_content[0]
+                                content = re.sub(r'^\s*#\s+|\s*\|\s*|"', '', content)  # Removes "# ", "|" with or without spaces, and double quotes from the text if encountered
                                 pyperclip.copy(content)
                                 print(
                                     f"{Fore.GREEN}Message contents copied to clipboard: {content}"
