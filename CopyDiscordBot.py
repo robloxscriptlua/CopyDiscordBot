@@ -1,6 +1,5 @@
 import aiohttp
 import asyncio
-import webbrowser
 import re
 from colorama import Fore, init
 import pyperclip
@@ -35,7 +34,10 @@ async def fetch_messages(channel_id, session, semaphore):
                             content = message.get("content")
                             user_id = message.get("author", {}).get("id")
                             if content and user_id == SPECIFIC_USER_ID:
-                                content = re.sub(r'^\s*#\s+', '', content) # Removes "# " from the text if encountered
+                                content = re.sub(r'^\s*#\s+', '', content)  # Removes "# " from the text if encountered
+                                quoted_content = re.findall(r'"(.*?)"', content) # Removes quotation marks from the text if encountered
+                                if quoted_content:
+                                    content = quoted_content[0]
                                 pyperclip.copy(content)
                                 print(
                                     f"{Fore.GREEN}Message contents copied to clipboard: {content}"
@@ -49,7 +51,7 @@ async def fetch_messages(channel_id, session, semaphore):
                 else:
                     print(f"Failed to fetch messages. Status Code: {response.status}")
 
-        await asyncio.sleep(0.5)  # Fetch messages every 0.5 seconds
+        await asyncio.sleep(0.2)  # Fetch messages every 0.2 seconds
 
 async def main():
     semaphore = asyncio.Semaphore(10)  # Limit the number of concurrent connections
