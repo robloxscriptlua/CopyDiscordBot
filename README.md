@@ -6,6 +6,8 @@ If ```Status Code: 401``` occurs, you entered your token incorrectly
 
 If you see ```Respond: 200```, it's working
 
+As you see on line 37: ```content = re.sub(r'^\s*#\s+|\s*\|\s*|"', '', content)``` that is the filter that removes hashtags, double quotes, and pipes. If you wish, just remove that code and there'll be no filter.
+
 ### **Installation**
 ---------------------
 
