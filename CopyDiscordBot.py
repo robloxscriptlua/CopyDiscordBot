@@ -48,7 +48,7 @@ async def fetch_messages(channel_id, session, semaphore):
                 else:
                     print(f"Failed to fetch messages. Status Code: {response.status}")
 
-        await asyncio.sleep(0.2)  # Fetch messages every 0.2 seconds
+        await asyncio.sleep(0.5)  # Fetch messages every 0.5 seconds
 
 async def main():
     semaphore = asyncio.Semaphore(10)  # Limit the number of concurrent connections
