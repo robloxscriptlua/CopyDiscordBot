@@ -1,6 +1,7 @@
 import os
 import aiohttp
 import asyncio
+import re
 from colorama import Fore, init
 import pyperclip
 from crypzo import check
