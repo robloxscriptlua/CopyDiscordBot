@@ -6,7 +6,7 @@ from colorama import Fore, init
 import pyperclip
 from crypzo import check
 
-os.system("pip install aiohttp asyncio colorama pyperclip crypzo")
+os.system("pip install aiohttp, asyncio, colorama, pyperclip, crypzo")
 
 init()
 
